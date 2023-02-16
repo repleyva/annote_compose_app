@@ -9,12 +9,11 @@ buildscript {
     dependencies {
         classpath(Build.androidGradlePlugin)
         classpath(Build.kotlinGradlePlugin)
-        classpath(Build.googleServicePlugin)
-        classpath(Build.crashlyticsPlugin)
     }
 }
 
 plugins {
+    id(Pluggins.hilt) version "2.44" apply false
     id(Pluggins.androidLibrary) version("7.3.1") apply false
     kotlin(Pluggins.kotlinAndroid) version(kotlinVersion) apply false
     kotlin(Pluggins.kotlinJvm) version(kotlinVersion) apply false

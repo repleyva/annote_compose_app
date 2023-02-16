@@ -1,10 +1,8 @@
 
-const val kotlinVersion = "1.7.20"
-const val googleServiceVersion = "4.3.14"
-const val crashlyticsVersion = "2.9.2"
-const val composeVersion = "1.3.2"
+const val kotlinVersion = "1.8.0"
+const val composeVersion = "1.3.3"
 const val composeMaterialVersion = "1.3.1"
-const val composeCompilerVersion = "1.3.2"
+const val composeCompilerVersion = "1.4.0"
 
 object Libraries {
 
@@ -25,6 +23,8 @@ object Libraries {
         const val viewPager2Version = "1.1.0-beta01"
         const val serializationVersion = "1.3.2"
         const val navComposeVersion = "2.5.3"
+        const val lottieVersion = "5.2.0"
+        const val roomVersion = "2.5.0"
     }
 
     /**
@@ -97,7 +97,52 @@ object Libraries {
         "androidx.constraintlayout:constraintlayout-compose:1.0.1",
         "androidx.compose.runtime:runtime-livedata:$composeVersion",
         "androidx.navigation:navigation-compose:${Versions.navComposeVersion}",
+        "androidx.compose.foundation:foundation:1.3.1"
     )
 
+    /**
+     * Lottie
+     */
 
+    val lottieLibrary = "com.airbnb.android:lottie:${Versions.lottieVersion}"
+
+    /**
+     * Room
+     */
+
+    val roomLibrary = arrayOf(
+        "androidx.room:room-runtime:${Versions.roomVersion}",
+        "androidx.room:room-ktx:${Versions.roomVersion}"
+    )
+    val roomKaptLibrary =  "androidx.room:room-compiler:${Versions.roomVersion}"
+
+    /**
+     * Dagger Hilt
+     */
+
+    val hiltLibrary = arrayOf(
+        "com.google.dagger:hilt-android:2.44",
+        "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03",
+        "androidx.hilt:hilt-navigation-compose:1.0.0",
+        "androidx.hilt:hilt-work:1.0.0",
+    )
+    val hiltKaptLibrary = arrayOf(
+        "com.google.dagger:hilt-android-compiler:2.44",
+        "androidx.hilt:hilt-compiler:1.0.0"
+    )
+
+    /**
+     * Datastore
+     */
+
+    val datastoreLibrary = "androidx.datastore:datastore-preferences:1.0.0"
+
+    /**
+     * Accompanist
+     */
+
+    val accompanistLibrary = listOf(
+        "com.google.accompanist:accompanist-pager:0.24.3-alpha",
+        "com.google.accompanist:accompanist-pager-indicators:0.24.3-alpha"
+    )
 }

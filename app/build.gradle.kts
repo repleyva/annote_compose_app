@@ -2,6 +2,8 @@ plugins {
     id(Pluggins.androidApplication)
     kotlin(Pluggins.kotlinKapt)
     kotlin(Pluggins.kotlinAndroid)
+    kotlin(Pluggins.serialization) version kotlinVersion
+    id(Pluggins.hilt)
 }
 
 android {
@@ -63,4 +65,15 @@ dependencies {
 
     Libraries.lifecycleLibraries.forEach { implementation(it) }
 
+    implementation(Libraries.lottieLibrary)
+
+    Libraries.roomLibrary.forEach { implementation(it) }
+    kapt(Libraries.roomKaptLibrary)
+
+    Libraries.hiltLibrary.forEach { implementation(it) }
+    Libraries.hiltKaptLibrary.forEach { implementation(it) }
+
+    implementation(Libraries.datastoreLibrary)
+
+    Libraries.accompanistLibrary.forEach { implementation(it) }
 }

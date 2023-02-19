@@ -24,6 +24,7 @@ object Libraries {
         const val serializationVersion = "1.3.2"
         const val navComposeVersion = "2.5.3"
         const val lottieVersion = "5.2.0"
+        const val lottieComposeVersion = "5.2.0"
         const val roomVersion = "2.5.0"
     }
 
@@ -104,7 +105,10 @@ object Libraries {
      * Lottie
      */
 
-    val lottieLibrary = "com.airbnb.android:lottie:${Versions.lottieVersion}"
+    val lottieLibrary =  arrayOf(
+        "com.airbnb.android:lottie:${Versions.lottieVersion}",
+        "com.airbnb.android:lottie-compose:${Versions.lottieComposeVersion}"
+    )
 
     /**
      * Room

@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.AnnoteComposeApp" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/purple_700</item>
+    <style name="Theme.AnnoteComposeApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/primary_black</item>
+        <item name="colorPrimaryVariant">@color/primary_black</item>
+        <item name="android:forceDarkAllowed" tools:ignore="NewApi">false</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     </style>
+
+    <style name="Theme.AnnoteComposeApp.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:ignore="NewApi">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AnnoteComposeApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AnnoteComposeApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

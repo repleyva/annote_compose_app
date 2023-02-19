@@ -65,7 +65,7 @@ dependencies {
 
     Libraries.lifecycleLibraries.forEach { implementation(it) }
 
-    implementation(Libraries.lottieLibrary)
+    Libraries.lottieLibrary.forEach { implementation(it) }
 
     Libraries.roomLibrary.forEach { implementation(it) }
     kapt(Libraries.roomKaptLibrary)

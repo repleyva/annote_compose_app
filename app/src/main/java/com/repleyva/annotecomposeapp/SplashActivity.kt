@@ -46,8 +46,6 @@ class SplashActivity : BaseActivity() {
 
         val compositionResult: LottieCompositionResult =
             rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.splash))
-        val progress by animateLottieCompositionAsState(compositionResult.value, speed = 4f)
-
 
         LaunchedEffect(true) {
             compositionResult.await()
@@ -64,7 +62,7 @@ class SplashActivity : BaseActivity() {
                 LottieAnimation(
                     modifier = Modifier.padding(horizontal = 100.dp),
                     composition = compositionResult.value,
-                    progress = progress
+                    speed = 4f
                 )
             }
         }

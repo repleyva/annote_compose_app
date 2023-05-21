@@ -50,6 +50,7 @@ inline fun Modifier.noRippleClickable(crossinline onClick: ()->Unit): Modifier =
 
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = STORE_NAME)
+
 @Composable
 fun <T> rememberPreference(
     key: Preferences.Key<T>,

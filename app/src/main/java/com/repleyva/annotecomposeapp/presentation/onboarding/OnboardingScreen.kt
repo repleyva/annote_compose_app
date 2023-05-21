@@ -6,15 +6,19 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
+import androidx.constraintlayout.compose.ExperimentalMotionApi
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
+import com.repleyva.annotecomposeapp.presentation.onboarding.step.FirstOnboardingScreen
+import com.repleyva.annotecomposeapp.presentation.onboarding.step.SecondOnboardingScreen
+import com.repleyva.annotecomposeapp.presentation.onboarding.step.ThirdOnboardingScreen
 
 enum class OnboardingTab(val index: Int) {
-    FIRST(0), SECOND(1), THIRD(3)
+    FIRST(0), SECOND(1), THIRD(2)
 }
 
-@OptIn(ExperimentalPagerApi::class)
+@OptIn(ExperimentalPagerApi::class, ExperimentalMotionApi::class)
 @Composable
 fun OnboardingScreen(
     screenHeight: Dp,
@@ -34,15 +38,12 @@ fun OnboardingScreen(
             ) { page ->
                 when (page) {
                     OnboardingTab.FIRST.index -> FirstOnboardingScreen(screenHeight = screenHeight)
-                   /* OnboardingTab.SECOND.index -> SecondOnboardingScreen(
-                        currentPage = pagerState.currentPage
-                    )
+                    OnboardingTab.SECOND.index -> SecondOnboardingScreen(currentPage = pagerState.currentPage)
                     OnboardingTab.THIRD.index -> ThirdOnboardingScreen(
                         screenHeight = screenHeight,
                         currentPage = pagerState.currentPage,
                         onGettingStartedClick = onGettingStartedClick
-                    )*/
-                    else -> { }
+                    )
                 }
             }
         }

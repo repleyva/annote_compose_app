@@ -30,8 +30,6 @@ import kotlinx.coroutines.delay
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : BaseActivity() {
 
-    private lateinit var isOnboardingScreenShown: MutableState<Boolean>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -41,7 +39,7 @@ class SplashActivity : BaseActivity() {
 
     @Composable
     private fun SplashScreen() {
-        isOnboardingScreenShown =
+        val isOnboardingScreenShown =
             rememberPreference(booleanPreferencesKey("isOnboardingScreenShown"), false)
 
         val compositionResult: LottieCompositionResult =

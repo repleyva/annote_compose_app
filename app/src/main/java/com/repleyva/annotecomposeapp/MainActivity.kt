@@ -13,16 +13,18 @@ import com.repleyva.annotecomposeapp.presentation.util.rememberPreference
 import com.repleyva.annotecomposeapp.presentation.util.screenHeight
 import com.repleyva.annotecomposeapp.ui.theme.AnnoteComposeAppTheme
 
-private const val KEY_IS_ONBOARDING_SHOWN = "KEY_IS_ONBOARDING_SHOWN"
 
 class MainActivity : BaseActivity() {
 
     companion object {
 
+        private const val KEY_IS_ONBOARDING_SHOWN = "KEY_IS_ONBOARDING_SHOWN"
+
         fun getStartActivityEvent(isOnboardingScreenShown: Boolean) = StartActivityEvent(
             MainActivity::class.java,
             Bundle().apply { putBoolean(KEY_IS_ONBOARDING_SHOWN, isOnboardingScreenShown) },
         )
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +46,7 @@ private fun Navigation(isShown: Boolean) {
             booleanPreferencesKey("isOnboardingScreenShown"),
             false
         )
+
         val isVisible = remember { mutableStateOf(false) }
 
         if (isShown || isVisible.value) {
@@ -59,4 +62,5 @@ private fun Navigation(isShown: Boolean) {
         }
 
     }
+
 }

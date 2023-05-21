@@ -1,4 +1,4 @@
-package com.repleyva.annotecomposeapp.presentation.onboarding
+package com.repleyva.annotecomposeapp.presentation.onboarding.step
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
